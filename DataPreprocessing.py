@@ -4,6 +4,7 @@ import nltk
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
+nltk.download('stopwords')
 
 class DataPreprocessing:
 
@@ -24,5 +25,6 @@ class DataPreprocessing:
         tokens = self.tokenizer.tokenize(text)
         tokens = [w for w in tokens if w not in self.stop_words]
         tokens = [self.stemmer.stem(w) for w in tokens]
+
 
         return ' '.join(tokens)   
